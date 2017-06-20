@@ -610,7 +610,7 @@ class Net::HTTP::Persistent
     if @proxy_uri and not proxy_bypass? uri.host, uri.port then
       net_http_args.concat @proxy_args
     else
-      net_http_args.concat [nil, nil, nil, nil}
+      net_http_args.concat [nil, nil, nil, nil]
     end
 
     connection = @pool.checkout net_http_args
