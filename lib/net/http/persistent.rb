@@ -202,7 +202,7 @@ class Net::HTTP::Persistent
   ##
   # The default connection pool size is 1/4 the allowed open files.
 
-  DEFAULT_POOL_SIZE = Process.getrlimit(Process::RLIMIT_NOFILE).first / 4
+  DEFAULT_POOL_SIZE = (Process.getrlimit(Process::RLIMIT_NOFILE).first / 4) rescue 256
 
   ##
   # The version of Net::HTTP::Persistent you are using
